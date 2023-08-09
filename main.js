@@ -78,3 +78,28 @@
    };
 
 let pokemon = [bulbasaur, charmander, squirtle, pikachu]; 
+/*1-Escribir una función que recibar un array de pokemones y los ordene de acuerdo a su HP.
+2-Escribir una función que recibe un array de pokemones si hay al menos un pokemon tipos ''fire'' y uno tipo ''water'' en la lista.
+3-Escribir una función que recibe un pokemon y me devuelve su 'stat' mas alto y su 'stat' mas bajo */
+
+console.log("Ejercicio 1");
+let ordenarHp = (pokemon) => {
+  let vida = [];
+
+  for (let i = 0; i < pokemon.length; i++) {
+    vida.push({hp:pokemon[i].stats.hp ,name:pokemon[i].name});
+  }
+  return vida.sort((a, b) => a.hp - b.hp);
+};
+console.log(ordenarHp(pokemon));
+
+let encontrarElTipo=(pokemon,tipo)=>{
+  let tipoEncontrado =[];
+  for(let i=0; i< pokemon.length;i++){
+    if(pokemon[i].type === "fire"|| pokemon[i].type==="water")
+    tipoEncontrado.push({type:pokemon[i].type ,name:pokemon[i].name})
+  }
+  return tipoEncontrado
+
+}
+console.log(encontrarElTipo(pokemon))
